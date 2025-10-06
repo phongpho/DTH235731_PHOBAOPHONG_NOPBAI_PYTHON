@@ -1,0 +1,3 @@
+DM01;Do Uong;SP01;Coca Cola;12000
+DM01;Do Uong;SP02;Pepsi;11000
+DM02;Banh Keo;SP03;Oreo;15000

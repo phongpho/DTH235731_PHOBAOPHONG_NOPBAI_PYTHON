@@ -1,0 +1,32 @@
+{
+    "D01": {
+        "ten_lop": "CNTT",
+        "sinh_vien": [
+            {
+                "ma_sv": "SV01",
+                "ten_sv": "Nguyen Van A",
+                "nam_sinh": 2003
+            },
+            {
+                "ma_sv": "SV02",
+                "ten_sv": "Tran Thi B",
+                "nam_sinh": 2004
+            }
+        ]
+    },
+    "D02": {
+        "ten_lop": "KinhTe",
+        "sinh_vien": [
+            {
+                "ma_sv": "SV03",
+                "ten_sv": "Le Van C",
+                "nam_sinh": 2002
+            },
+            {
+                "ma_sv": "Sv04",
+                "ten_sv": "Cristiano Ronaldo",
+                "nam_sinh": 2005
+            }
+        ]
+    }
+}

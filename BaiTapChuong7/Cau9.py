@@ -62,7 +62,7 @@ def them_san_pham(ds_dm):
     ten_sp = input("Nhập tên sản phẩm: ")
     gia = float(input("Nhập đơn giá: "))
     ds_dm[ma_dm].san_pham.append(SanPham(ma_sp, ten_sp, gia))
-    print("✅ Đã thêm sản phẩm.")
+    print("Đã thêm sản phẩm.")
 
 def sua_san_pham(ds_dm):
     ma_sp = input("Nhập mã sản phẩm cần sửa: ")
@@ -74,7 +74,7 @@ def sua_san_pham(ds_dm):
                 if gia: sp.don_gia = float(gia)
                 print("✅ Đã cập nhật sản phẩm.")
                 return
-    print("❌ Không tìm thấy sản phẩm.")
+    print("Không tìm thấy sản phẩm.")
 
 def xoa_san_pham(ds_dm):
     ma_sp = input("Nhập mã sản phẩm cần xóa: ")
@@ -84,7 +84,7 @@ def xoa_san_pham(ds_dm):
                 dm.san_pham.remove(sp)
                 print("✅ Đã xóa sản phẩm.")
                 return
-    print("❌ Không tìm thấy sản phẩm.")
+    print("Không tìm thấy sản phẩm.")
 
 def tim_kiem(ds_dm):
     tu_khoa = input("Nhập tên sản phẩm cần tìm: ").lower()
@@ -94,9 +94,9 @@ def tim_kiem(ds_dm):
             if tu_khoa in sp.ten_sp.lower():
                 ket_qua.append((dm, sp))
     if not ket_qua:
-        print("❌ Không tìm thấy sản phẩm phù hợp.")
+        print("Không tìm thấy sản phẩm phù hợp.")
     else:
-        print("\n🔍 Kết quả tìm kiếm:")
+        print("\nKết quả tìm kiếm:")
         for dm, sp in ket_qua:
             print(f"{sp.ma_sp} - {sp.ten_sp} - {sp.don_gia} ({dm.ten_dm})")
 
@@ -109,7 +109,7 @@ def sap_xep(ds_dm):
             dm.san_pham.sort(key=lambda sp: sp.ten_sp)
         elif chon == "2":
             dm.san_pham.sort(key=lambda sp: sp.don_gia)
-    print("✅ Đã sắp xếp xong.")
+    print("✅Đã sắp xếp xong.")
 
 # ---------- MENU CHÍNH ----------
 def main():
@@ -125,18 +125,27 @@ def main():
         print("7. Lưu file")
         print("8. Thoát")
         chon = input("Chọn chức năng (1-8): ")
-        if chon == "1": hien_thi(ds_dm)
-        elif chon == "2": them_san_pham(ds_dm)
-        elif chon == "3": sua_san_pham(ds_dm)
-        elif chon == "4": xoa_san_pham(ds_dm)
-        elif chon == "5": tim_kiem(ds_dm)
-        elif chon == "6": sap_xep(ds_dm)
-        elif chon == "7": ghi_file(ds_dm)
-        elif chon == "8":
-            print("Tạm biệt 👋")
-            break
-        else:
-            print("❌ Lựa chọn không hợp lệ!")
+        match chon:
+            case "1":
+                hien_thi(ds_dm)
+            case "2":
+                them_san_pham(ds_dm)
+            case "3":
+                sua_san_pham(ds_dm)
+            case "4":
+                xoa_san_pham(ds_dm)
+            case "5":
+                tim_kiem(ds_dm)
+            case "6":
+                sap_xep(ds_dm)
+            case "7":
+                ghi_file(ds_dm)
+            case "8":
+                print("Tạm biệt 👋")
+                break
+            case _:
+                print("Lựa chọn không hợp lệ!")
+
 
 if __name__ == "__main__":
     main()

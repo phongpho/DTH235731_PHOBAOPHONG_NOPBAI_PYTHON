@@ -4,7 +4,7 @@ import os
 
 FILE_NAME = "password.json"
 
-# ====== HÀM XỬ LÝ FILE ======
+
 def doc_password():
     if os.path.exists(FILE_NAME):
         with open(FILE_NAME, "r") as f:
@@ -16,7 +16,7 @@ def ghi_password(new_pw):
     with open(FILE_NAME, "w") as f:
         json.dump({"password": new_pw}, f)
 
-# ====== HÀM KHI NHẤN NÚT ======
+
 def save_password():
     old_pw = entry_old.get()
     new_pw = entry_new.get()
@@ -33,15 +33,13 @@ def save_password():
 def cancel():
     root.destroy()
 
-# ====== GIAO DIỆN ======
 root = Tk()
-root.title("Change Password")
-root.geometry("400x200")
-
-Label(root, text="Change Password", fg="blue", font=("tahoma", 14, "bold")).pack(pady=10)
+root.title("Enter New Password")
+root.minsize(height=150, width=200)
+root.resizable(height=True, width=True)
 
 frame = Frame(root)
-frame.pack()
+frame.grid(row=0, column=0, columnspan=2)
 
 Label(frame, text="Old password:", font=("tahoma", 11)).grid(row=0, column=0, sticky=W, padx=5, pady=5)
 entry_old = Entry(frame, width=25, show="*", font=("tahoma", 11))
@@ -51,14 +49,14 @@ Label(frame, text="New password:", font=("tahoma", 11)).grid(row=1, column=0, st
 entry_new = Entry(frame, width=25, show="*", font=("tahoma", 11))
 entry_new.grid(row=1, column=1, padx=5, pady=5)
 
-Label(frame, text="Confirm password:", font=("tahoma", 11)).grid(row=2, column=0, sticky=W, padx=5, pady=5)
+Label(frame, text="Enter New Password Again:", font=("tahoma", 11)).grid(row=2, column=0, sticky=W, padx=5, pady=5)
 entry_confirm = Entry(frame, width=25, show="*", font=("tahoma", 11))
 entry_confirm.grid(row=2, column=1, padx=5, pady=5)
 
 frame_btn = Frame(root)
-frame_btn.pack(pady=10)
+frame_btn.grid(row=3, columnspan= 2)
 
-Button(frame_btn, text="Enter", width=10, command=save_password).pack(side=LEFT, padx=10)
+Button(frame_btn, text="Ok", width=10, command=save_password).pack(side=LEFT, padx=10)
 Button(frame_btn, text="Cancel", width=10, command=cancel).pack(side=LEFT, padx=10)
 
 root.mainloop()

@@ -31,6 +31,7 @@ stringKQ = StringVar()
 
 root.title("Cộng Trừ Nhân Chia")
 root.minsize(height=150, width=200)
+root.resizable(height=True, width=True)
 
 Label(root, text="Cộng Trừ Nhân Chia", fg="blue", font=("tahoma", 16)).grid(row=0, columnspan=3)
 

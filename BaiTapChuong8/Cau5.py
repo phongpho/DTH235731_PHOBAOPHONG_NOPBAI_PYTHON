@@ -35,28 +35,28 @@ def cancel():
 
 root = Tk()
 root.title("Enter New Password")
-root.minsize(height=150, width=200)
+root.minsize(height=100, width=200)
 root.resizable(height=True, width=True)
 
 frame = Frame(root)
 frame.grid(row=0, column=0, columnspan=2)
 
-Label(frame, text="Old password:", font=("tahoma", 11)).grid(row=0, column=0, sticky=W, padx=5, pady=5)
+Label(frame, text="Old password:", font=("tahoma", 11)).grid(row=0, column=0, sticky=W)
 entry_old = Entry(frame, width=25, show="*", font=("tahoma", 11))
-entry_old.grid(row=0, column=1, padx=5, pady=5)
+entry_old.grid(row=0, column=1)
 
-Label(frame, text="New password:", font=("tahoma", 11)).grid(row=1, column=0, sticky=W, padx=5, pady=5)
+Label(frame, text="New password:", font=("tahoma", 11)).grid(row=1, column=0, sticky=W)
 entry_new = Entry(frame, width=25, show="*", font=("tahoma", 11))
-entry_new.grid(row=1, column=1, padx=5, pady=5)
+entry_new.grid(row=1, column=1)
 
-Label(frame, text="Enter New Password Again:", font=("tahoma", 11)).grid(row=2, column=0, sticky=W, padx=5, pady=5)
+Label(frame, text="Enter New Password Again:", font=("tahoma", 11)).grid(row=2, column=0, sticky=W)
 entry_confirm = Entry(frame, width=25, show="*", font=("tahoma", 11))
-entry_confirm.grid(row=2, column=1, padx=5, pady=5)
+entry_confirm.grid(row=2, column=1)
 
 frame_btn = Frame(root)
-frame_btn.grid(row=3, columnspan= 2)
+frame_btn.grid(row=3, columnspan= 2, pady= 10)
 
-Button(frame_btn, text="Ok", width=10, command=save_password).pack(side=LEFT, padx=10)
-Button(frame_btn, text="Cancel", width=10, command=cancel).pack(side=LEFT, padx=10)
+Button(frame_btn, text="Ok", width=10, command=save_password).pack(side=LEFT,padx= 5)
+Button(frame_btn, text="Cancel", width=10, command=cancel).pack(side=LEFT, padx=5)
 
 root.mainloop()
